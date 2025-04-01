@@ -20,7 +20,7 @@ jobs:
     - uses: actions/checkout@v4
 
     - name: 'Build'
-      run: dotnet build 'mcpserver.azuredevops - Solution.sln' -c Release
+      run: dotnet build src\mcpserver.azuredevops.stdio\mcpserver.azuredevops.stdio.csproj -c Release
 
-    # - name: 'Test McpDotNet'
+    # - name: 'Test'
     #   run: dotnet test './test/McpDotNet.Extensions.SemanticKernel.Tests/McpDotNet.Extensions.SemanticKernel.Tests.csproj' -c Release
