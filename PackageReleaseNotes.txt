@@ -1,3 +1,4 @@
-#  ()
+# 0.0.1-preview-02 (01 April 2025)
+- #1 GetProjects, GetProject, GetRepositories, GetRepository and GetCommitsForRepository [enhancement]
 
 The full release notes can be found here: https://github.com/StefH/mcpserver.azuredevops/blob/main/ReleaseNotes.md
