@@ -1,5 +1,5 @@
-# mcpserver.azuredevops
-A Stdio MCP server as dotnet tool to access Azure DevOps.
+﻿# mcpserver.azuredevops
+MCP server as dotnet tool to access Azure DevOps.
 
 ## Installation
 ``` cmd

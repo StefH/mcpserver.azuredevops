@@ -1,0 +1,26 @@
+name: Build and Test
+
+on: 
+  pull_request:
+    branches:
+      - '**'
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  build-and-test:
+    name: Build and Test on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [windows-2022, ubuntu-latest]
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: 'Build'
+      run: dotnet build ./src/mcpserver.azuredevops.stdio/mcpserver.azuredevops.stdio.csproj -c Release
+
+    # - name: 'Test'
+    #   run: dotnet test './test/McpDotNet.Extensions.SemanticKernel.Tests/McpDotNet.Extensions.SemanticKernel.Tests.csproj' -c Release
