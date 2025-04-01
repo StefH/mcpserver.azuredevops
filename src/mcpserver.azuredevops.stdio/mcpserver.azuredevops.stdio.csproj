@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Version>0.0.1-preview-01</Version>
+    <Version>0.0.1-preview-02</Version>
     <PackageId>mcpserver.azuredevops.stdio</PackageId>
     <ToolCommandName>mcpserver.azuredevops.stdio</ToolCommandName>
     <RootNamespace>ModelContextProtocolServer.AzureDevops.Stdio</RootNamespace>
