@@ -18,7 +18,7 @@ internal class ProjectsTools(AzureDevOpsClient azureDevOpsClient) : BaseTools
         string? continuationToken = null;
         do
         {
-            var projects = await azureDevOpsClient.ProjectHttpClient.GetProjects(top: top, skip: skip, continuationToken: continuationToken);
+            var projects = await azureDevOpsClient.ProjectClient.GetProjects(top: top, skip: skip, continuationToken: continuationToken);
             allProjects.AddRange(projects);
 
             skip += projects.Count;
@@ -39,7 +39,7 @@ internal class ProjectsTools(AzureDevOpsClient azureDevOpsClient) : BaseTools
         [Description("Include capabilities (such as source control) in the team project result.")] bool? includeCapabilities = null,
         [Description("Search within renamed projects (that had such name in the past).")] bool? includeHistory = null)
     {
-        var project = await azureDevOpsClient.ProjectHttpClient.GetProject(id, includeCapabilities, includeHistory ?? false);
+        var project = await azureDevOpsClient.ProjectClient.GetProject(id, includeCapabilities, includeHistory ?? false);
 
         return ToJson(project);
     }

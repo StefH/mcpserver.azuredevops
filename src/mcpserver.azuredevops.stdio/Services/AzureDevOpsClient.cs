@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.TeamFoundation.Core.WebApi;
+using Microsoft.TeamFoundation.SourceControl.WebApi;
 using Microsoft.VisualStudio.Services.Common;
 using Microsoft.VisualStudio.Services.WebApi;
 using Stef.Validation;
@@ -8,7 +9,9 @@ namespace ModelContextProtocolServer.AzureDevops.Stdio.Services;
 
 internal class AzureDevOpsClient
 {
-    public ProjectHttpClient ProjectHttpClient { get; }
+    public ProjectHttpClient ProjectClient { get; }
+
+    public GitHttpClient GitClient { get; }
 
     public AzureDevOpsClient(IConfiguration configuration)
     {
@@ -18,6 +21,7 @@ internal class AzureDevOpsClient
 
         var connection = new VssConnection(new Uri(baseUri), new VssBasicCredential(string.Empty, pat));
 
-        ProjectHttpClient = connection.GetClient<ProjectHttpClient>();
+        ProjectClient = connection.GetClient<ProjectHttpClient>();
+        GitClient = connection.GetClient<GitHttpClient>();
     }
 }

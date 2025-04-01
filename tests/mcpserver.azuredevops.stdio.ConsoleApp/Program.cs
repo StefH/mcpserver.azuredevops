@@ -14,6 +14,9 @@ var configuration = new ConfigurationBuilder()
 var azureDevOpsClient = new AzureDevOpsClient(configuration);
 
 var projectsTools = new ProjectsTools(azureDevOpsClient);
-var result = await projectsTools.GetProjects(5);
+var projects = await projectsTools.GetProjects(5);
+Console.WriteLine(projects);
 
-Console.WriteLine(result);
+var gitTools = new GitTools(azureDevOpsClient);
+var repositories = await gitTools.GetRepositories("38A58E48-A038-46D2-86C8-DFDC4A243A35");
+var commits = await gitTools.GetCommitsForRepository("66752a17-f868-41c1-847a-38fe9812771d");
