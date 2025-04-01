@@ -32,4 +32,15 @@ internal class ProjectsTools(AzureDevOpsClient azureDevOpsClient) : BaseTools
 
         return ToJson(allProjects);
     }
+
+    [McpServerTool, Description("Get project with the specified id or name, optionally including capabilities.")]
+    public async Task<string> GetProject(
+        [Description("The name or id of the project.")] string id,
+        [Description("Include capabilities (such as source control) in the team project result.")] bool? includeCapabilities = null,
+        [Description("Search within renamed projects (that had such name in the past).")] bool? includeHistory = null)
+    {
+        var project = await azureDevOpsClient.ProjectHttpClient.GetProject(id, includeCapabilities, includeHistory ?? false);
+
+        return ToJson(project);
+    }
 }
