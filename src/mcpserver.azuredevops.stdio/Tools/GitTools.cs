@@ -8,24 +8,6 @@ namespace ModelContextProtocolServer.AzureDevops.Stdio.Tools;
 [McpServerToolType]
 internal class GitTools(AzureDevOpsClient azureDevOpsClient) : BaseTools
 {
-    [McpServerTool, Description("Retrieve git commits for a repository and project.")]
-    public async Task<string> GetRepositories(
-        [Description("The name or ID of the project.")] string projectId
-    )
-    {
-        var repositories = await azureDevOpsClient.GitClient.GetRepositoriesAsync(projectId);
-        return ToJson(repositories);
-    }
-
-    [McpServerTool, Description("Retrieve a git repository.")]
-    public async Task<string> GetRepository(
-        [Description("The name or ID of the repository.")] string repositoryId
-    )
-    {
-        var repository = await azureDevOpsClient.GitClient.GetRepositoryAsync(repositoryId);
-        return ToJson(repository);
-    }
-
     [McpServerTool, Description("Retrieve git commits for a repository.")]
     public async Task<string> GetCommitsForRepository(
         [Description("The ID of the repository.")] string repositoryId,
@@ -37,5 +19,23 @@ internal class GitTools(AzureDevOpsClient azureDevOpsClient) : BaseTools
 
         var commits = await azureDevOpsClient.GitClient.GetCommitsAsync(repositoryId, new GitQueryCommitsCriteria(), skip, top);
         return ToJson(commits);
+    }
+
+    [McpServerTool, Description("Retrieve a git repository.")]
+    public async Task<string> GetRepository(
+        [Description("The name or ID of the repository.")] string repositoryId
+    )
+    {
+        var repository = await azureDevOpsClient.GitClient.GetRepositoryAsync(repositoryId);
+        return ToJson(repository);
+    }
+
+    [McpServerTool, Description("Retrieve git commits for a repository and project.")]
+    public async Task<string> GetRepositories(
+        [Description("The name or ID of the project.")] string projectId
+    )
+    {
+        var repositories = await azureDevOpsClient.GitClient.GetRepositoriesAsync(projectId);
+        return ToJson(repositories);
     }
 }

@@ -9,4 +9,11 @@ dotnet tool install --global mcpserver.azuredevops.stdio
 ## Supported
 
 ### Projects
-- `list_projects`: List all projects in the Azure DevOps organization.
+- `GetProject`
+- `GetProjects`
+
+
+### Git
+- `GetCommitsForRepository`
+- `GetRepository`
+- `GetRepositories`
