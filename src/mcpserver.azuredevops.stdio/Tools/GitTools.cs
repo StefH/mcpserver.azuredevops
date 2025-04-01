@@ -17,6 +17,15 @@ internal class GitTools(AzureDevOpsClient azureDevOpsClient) : BaseTools
         return ToJson(repositories);
     }
 
+    [McpServerTool, Description("Retrieve a git repository.")]
+    public async Task<string> GetRepository(
+        [Description("The name or ID of the repository.")] string repositoryId
+    )
+    {
+        var repository = await azureDevOpsClient.GitClient.GetRepositoryAsync(repositoryId);
+        return ToJson(repository);
+    }
+
     [McpServerTool, Description("Retrieve git commits for a repository.")]
     public async Task<string> GetCommitsForRepository(
         [Description("The ID of the repository.")] string repositoryId,
