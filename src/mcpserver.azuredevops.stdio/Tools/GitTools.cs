@@ -6,10 +6,10 @@ using ModelContextProtocolServer.AzureDevops.Stdio.Services;
 namespace ModelContextProtocolServer.AzureDevops.Stdio.Tools;
 
 [McpServerToolType]
-internal class GitTools(AzureDevOpsClient azureDevOpsClient) : BaseTools
+internal class GitTools(AzureDevOpsClient azureDevOpsClient)
 {
     [McpServerTool, Description("Retrieve git commits for a repository.")]
-    public async Task<string> GetCommitsForRepository(
+    public async Task<IReadOnlyList<GitCommitRef>> GetCommitsForRepository(
         [Description("The ID of the repository.")] string repositoryId,
         [Description("Number of commits to return (default value is 100).")] int? top = null,
         [Description("Number of commits to skip.")] int? skip = null
@@ -17,25 +17,22 @@ internal class GitTools(AzureDevOpsClient azureDevOpsClient) : BaseTools
     {
         top ??= 100;
 
-        var commits = await azureDevOpsClient.GitClient.GetCommitsAsync(repositoryId, new GitQueryCommitsCriteria(), skip, top);
-        return ToJson(commits);
+        return await azureDevOpsClient.GitClient.GetCommitsAsync(repositoryId, new GitQueryCommitsCriteria(), skip, top);
     }
 
     [McpServerTool, Description("Retrieve a git repository.")]
-    public async Task<string> GetRepository(
+    public Task<GitRepository?> GetRepository(
         [Description("The name or ID of the repository.")] string repositoryId
     )
     {
-        var repository = await azureDevOpsClient.GitClient.GetRepositoryAsync(repositoryId);
-        return ToJson(repository);
+        return azureDevOpsClient.GitClient.GetRepositoryAsync(repositoryId);
     }
 
     [McpServerTool, Description("Retrieve git commits for a repository and project.")]
-    public async Task<string> GetRepositories(
+    public async Task<IReadOnlyList<GitRepository>> GetRepositories(
         [Description("The name or ID of the project.")] string projectId
     )
     {
-        var repositories = await azureDevOpsClient.GitClient.GetRepositoriesAsync(projectId);
-        return ToJson(repositories);
+        return await azureDevOpsClient.GitClient.GetRepositoriesAsync(projectId);
     }
 }
