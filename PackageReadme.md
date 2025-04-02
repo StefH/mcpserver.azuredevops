@@ -6,7 +6,9 @@ MCP server as dotnet tool to access Azure DevOps.
 dotnet tool install --global mcpserver.azuredevops.stdio
 ```
 
-## Supported
+<br>
+
+## Supported Methods
 
 ### Projects
 - `GetProject`

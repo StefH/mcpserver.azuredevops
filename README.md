@@ -1,12 +1,17 @@
 # mcpserver.azuredevops
 A Stdio MCP server as dotnet tool to access Azure DevOps.
 
-## Installation
+## NuGet
+[![NuGet Badge](https://img.shields.io/nuget/v/mcpserver.azuredevops.stdio)](https://www.nuget.org/packages/mcpserver.azuredevops.stdio)
+
+### Installation
 ``` cmd
 dotnet tool install --global mcpserver.azuredevops.stdio
 ```
 
-## Supported
+<br>
+
+## Supported Methods
 
 ### Projects
 - `GetProject`
