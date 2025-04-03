@@ -10,7 +10,7 @@ dotnet tool install --global mcpserver.azuredevops.stdio
 
 ## Supported Methods
 
-### Projects
+### Project
 - `GetCommit`
 - `GetProject`
 - `GetProjects`
