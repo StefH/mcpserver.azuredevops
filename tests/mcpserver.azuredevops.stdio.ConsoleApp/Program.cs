@@ -4,11 +4,11 @@ using ModelContextProtocolServer.AzureDevops.Stdio.Services;
 using ModelContextProtocolServer.AzureDevops.Stdio.Tools;
 
 var configuration = new ConfigurationBuilder()
-    .AddInMemoryCollection(new List<KeyValuePair<string, string?>>
-    {
-        new("AZURE_DEVOPS_ORG_URL", $"https://dev.azure.com/{Environment.GetEnvironmentVariable("AZURE_DEVOPS_ORG")}"),
-        new("AZURE_DEVOPS_PAT", Environment.GetEnvironmentVariable("MCP_PAT"))
-    })
+    //.AddInMemoryCollection(new List<KeyValuePair<string, string?>>
+    //{
+    //    new("AZURE_DEVOPS_ORG_URL", $"https://dev.azure.com/{Environment.GetEnvironmentVariable("AZURE_DEVOPS_ORG")}"),
+    //    new("AZURE_DEVOPS_PAT", Environment.GetEnvironmentVariable("MCP_PAT"))
+    //})
     .AddEnvironmentVariables()
     .Build();
 
