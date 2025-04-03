@@ -40,17 +40,17 @@ Get 5 commits from the repository '. . .'
 ``` raw
 Here are the 3 most recent commits from the '. . .' repository:
 
-1. **Commit ID:** [. . .](https://dev.azure.com/mstack/. . ./_git/. . ./commit/. . .)
-   - **Author:** Stef Heyenrath (mStack)
+1. **Commit ID:** [. . .](https://dev.azure.com/. . ./. . ./_git/. . ./commit/. . .)
+   - **Author:** Stef Heyenrath
    - **Date:** 2021-12-17
    - **Comment:** Merged PR 378: Updated mindmap-certifications.json
 
-2. **Commit ID:** [. . .](https://dev.azure.com/mstack/. . ./_git/. . ./commit/. . .)
-   - **Author:** Stef Heyenrath (mStack)
+2. **Commit ID:** [. . .](https://dev.azure.com/. . ./. . ./_git/. . ./commit/. . .)
+   - **Author:** Stef Heyenrath
    - **Date:** 2021-12-17
    - **Comment:** Merge pull request 378 from stef-update-az104 into master
 
-3. **Commit ID:** [. . .](https://dev.azure.com/mstack/. . ./_git/. . ./commit/. . .)
+3. **Commit ID:** [. . .](https://dev.azure.com/. . ./. . ./_git/. . ./commit/. . .)
    - **Author:** Stef Heyenrath
    - **Date:** 2021-12-17
    - **Comment:** 103
