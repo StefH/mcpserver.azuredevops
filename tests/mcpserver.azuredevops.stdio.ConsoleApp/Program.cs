@@ -13,8 +13,8 @@ var configuration = new ConfigurationBuilder()
 
 var azureDevOpsClient = new AzureDevOpsClient(configuration);
 
-var projectsTools = new ProjectTools(azureDevOpsClient);
-var projects = await projectsTools.GetProjects(5);
+var projectTools = new ProjectTools(azureDevOpsClient);
+var projects = await projectTools.GetProjects(5);
 Console.WriteLine(projects);
 
 var gitTools = new GitTools(azureDevOpsClient);
