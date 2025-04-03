@@ -1,7 +1,7 @@
 ﻿# mcpserver.azuredevops
 A Stdio MCP server as dotnet tool to access Azure DevOps.
 
-## NuGet
+## 📦 NuGet
 [![NuGet Badge](https://img.shields.io/nuget/v/mcpserver.azuredevops.stdio)](https://www.nuget.org/packages/mcpserver.azuredevops.stdio)
 
 ### Installation
@@ -11,7 +11,7 @@ dotnet tool install --global mcpserver.azuredevops.stdio
 
 <br>
 
-## Supported Methods
+## 🛠️ Supported Tools
 
 ### Projects
 - `GetProject`
@@ -24,18 +24,19 @@ dotnet tool install --global mcpserver.azuredevops.stdio
 - `GetRepository`
 - `GetRepositories`
 
+<br>
 
 ## 💡 LLM Examples
 
 ### Semantic Kernel
-This MCP Server can be used in Semantic Kernel. See [ModelContextProtocol-SemanticKernel](https://github.com/StefH/McpDotNet.Extensions.SemanticKernel).
+This MCP Server can be used in [ModelContextProtocol-SemanticKernel](https://github.com/StefH/McpDotNet.Extensions.SemanticKernel).
 
 #### Question
 ``` raw
 Get 5 commits from the repository '. . .'
 ```
 
-#### Aswer
+#### Answer
 ``` raw
 Here are the 3 most recent commits from the '. . .' repository:
 
