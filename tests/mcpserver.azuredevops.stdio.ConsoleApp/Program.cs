@@ -14,17 +14,28 @@ var configuration = new ConfigurationBuilder()
 
 var azureDevOpsClient = new AzureDevOpsClient(configuration);
 
-var projectTools = new ProjectTools(azureDevOpsClient);
-var projects = await projectTools.GetProjects(3);
+var navTools = new CoreNavigationTools(azureDevOpsClient);
+var projects = await navTools.GetProjects(3);
 Console.WriteLine(ToJson(projects));
 
-var gitTools = new GitTools(azureDevOpsClient);
-var repositories = await gitTools.GetRepositories(projects[1].Id.ToString());
+var repositories = await navTools.GetRepositories(projects[1].Id.ToString());
 Console.WriteLine(ToJson(repositories));
 
-var commits = await gitTools.GetCommitsForRepository(repositories[0].Id.ToString());
+var gitTools = new CommitTools(azureDevOpsClient);
+var commits = await gitTools.GetCommits(repositories[1].Id.ToString());
 Console.WriteLine(ToJson(commits));
 
+var searchTools = new SearchCodeTools(azureDevOpsClient);
+var search = await searchTools.Search(
+    projects[1].Id.ToString(), 
+    "async",
+    projects: [projects[1].Name],
+    repositories: [repositories[1].Name],
+    codeElements: ["class"],
+    includeSnippet: true,
+    top: 5
+);
+Console.WriteLine(ToJson(search));
 return;
 
 static string ToJson(object value)

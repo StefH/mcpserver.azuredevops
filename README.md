@@ -13,16 +13,58 @@ dotnet tool install --global mcpserver.azuredevops.stdio
 
 ## 🛠️ Supported Tools
 
-### Project
-- `GetProject`
-- `GetProjects`
+### Core Navigation Tools
+- `GetProjects`: List all accessible projects
+- `GetRepositories`: List all repositories in a project
 
 
-### Git
-- `GetCommit`
-- `GetCommitsForRepository`
-- `GetRepository`
-- `GetRepositories`
+### Project Tools
+- `GetProject`: Get details of a specific project
+
+
+### Repository Tools
+- `GetRepository`: Get repository details
+
+
+### Search Tools
+- `SearchCode`: Search for code across repositories in a project
+
+
+### GetCommit Tools
+- `GetCommit`: Retrieve a particular commit details
+- `GetCommits`: Retrieve git commits
+
+
+### 🚧 Work Item Tools 🚧
+- `get_work_item`: Retrieve a work item by ID
+- `create_work_item`: Create a new work item
+- `update_work_item`: Update an existing work item
+- `list_work_items`: List work items in a project
+- `manage_work_item_link`: Add, remove, or update links between work items
+
+
+### 🚧 Boards 🚧
+- `get_boards`: Get available boards in the project
+
+
+### 🚧 Pipelines 🚧
+- `list_pipelines`: List all pipelines in the project
+- `trigger_pipeline`: Execute a pipeline
+
+
+### 🚧 Pull Requests 🚧
+- `list_pull_requests`: List pull requests
+- `create_pull_request`: Create a new pull request
+- `update_pull_request`: Update a pull request
+- `get_pull_request`: Get pull request details
+
+
+### 🚧 Wiki 🚧
+- `get_wikis`: List all wikis in the project
+- `get_wiki_page`: Get a wiki page
+- `create_wiki`: Create a new wiki
+- `update_wiki_page`: Create or update a wiki page
+
 
 <br>
 
