@@ -24,11 +24,8 @@
     <PackageTags>MCP;ModelContextProtocol;AI;LLM;Server;Stdio;Azure;DevOps</PackageTags>
     <Description>A Stdio MCP server as dotnet tool to access Azure DevOps.</Description>
     <PackageReadmeFile>PackageReadme.md</PackageReadmeFile>
+    <UserSecretsId>34fbcc17-d2d6-43b9-a307-55b58b8ac9a0</UserSecretsId>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Remove="Tools\BaseTools.cs" />
-  </ItemGroup>
 
   <ItemGroup>
     <None Include="../../resources/icon.png" Pack="true" PackagePath="" />
@@ -49,6 +46,11 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.TeamFoundationServer.Client" Version="19.225.1" />
     <PackageReference Include="ModelContextProtocolServer.Stdio" Version="0.0.1-preview-05" />
+    <PackageReference Include="RestEase" Version="1.6.4" />
+    <PackageReference Include="RestEase.SourceGenerator" Version="1.6.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>

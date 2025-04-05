@@ -26,8 +26,16 @@ dotnet tool install --global mcpserver.azuredevops.stdio
 - `GetRepository`: Get repository details
 
 
-### Work Item Tools
+### Search Tools
+- `SearchCode`: Search for code across repositories in a project
 
+
+### Git Tools
+- `GetCommit`: ...
+- `GetCommitsForRepository`: ...
+
+
+### 🚧 Work Item Tools 🚧
 - `get_work_item`: Retrieve a work item by ID
 - `create_work_item`: Create a new work item
 - `update_work_item`: Update an existing work item
@@ -35,13 +43,27 @@ dotnet tool install --global mcpserver.azuredevops.stdio
 - `manage_work_item_link`: Add, remove, or update links between work items
 
 
-### Search Tools
-- `search_code`: Search for code across repositories in a project
+### 🚧 Boards 🚧
+- `get_boards`: Get available boards in the project
 
 
-### Git Tools
-- `GetCommit`
-- `GetCommitsForRepository`
+### 🚧 Pipelines 🚧
+- `list_pipelines`: List all pipelines in the project
+- `trigger_pipeline`: Execute a pipeline
+
+
+### 🚧 Pull Requests 🚧
+- `list_pull_requests`: List pull requests
+- `create_pull_request`: Create a new pull request
+- `update_pull_request`: Update a pull request
+- `get_pull_request`: Get pull request details
+
+
+### 🚧 Wiki 🚧
+- `get_wikis`: List all wikis in the project
+- `get_wiki_page`: Get a wiki page
+- `create_wiki`: Create a new wiki
+- `update_wiki_page`: Create or update a wiki page
 
 
 <br>
