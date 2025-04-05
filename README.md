@@ -13,16 +13,36 @@ dotnet tool install --global mcpserver.azuredevops.stdio
 
 ## 🛠️ Supported Tools
 
-### Project
-- `GetProject`
-- `GetProjects`
+### Core Navigation Tools
+- `GetProjects`: List all accessible projects
+- `GetRepositories`: List all repositories in a project
 
 
-### Git
+### Project Tools
+- `GetProject`: Get details of a specific project
+
+
+### Repository Tools
+- `GetRepository`: Get repository details
+
+
+### Work Item Tools
+
+- `get_work_item`: Retrieve a work item by ID
+- `create_work_item`: Create a new work item
+- `update_work_item`: Update an existing work item
+- `list_work_items`: List work items in a project
+- `manage_work_item_link`: Add, remove, or update links between work items
+
+
+### Search Tools
+- `search_code`: Search for code across repositories in a project
+
+
+### Git Tools
 - `GetCommit`
 - `GetCommitsForRepository`
-- `GetRepository`
-- `GetRepositories`
+
 
 <br>
 

@@ -14,14 +14,14 @@ var configuration = new ConfigurationBuilder()
 
 var azureDevOpsClient = new AzureDevOpsClient(configuration);
 
-var projectTools = new ProjectTools(azureDevOpsClient);
-var projects = await projectTools.GetProjects(3);
+var navTools = new CoreNavigationTools(azureDevOpsClient);
+var projects = await navTools.GetProjects(3);
 Console.WriteLine(ToJson(projects));
 
-var gitTools = new GitTools(azureDevOpsClient);
-var repositories = await gitTools.GetRepositories(projects[1].Id.ToString());
+var repositories = await navTools.GetRepositories(projects[1].Id.ToString());
 Console.WriteLine(ToJson(repositories));
 
+var gitTools = new CommitTools(azureDevOpsClient);
 var commits = await gitTools.GetCommitsForRepository(repositories[0].Id.ToString());
 Console.WriteLine(ToJson(commits));
 
