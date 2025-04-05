@@ -1,6 +1,7 @@
 ﻿using System.Net.Http.Headers;
 using System.Text;
 using Microsoft.Extensions.Configuration;
+using Microsoft.TeamFoundation.Build.WebApi;
 using Microsoft.TeamFoundation.Core.WebApi;
 using Microsoft.TeamFoundation.SourceControl.WebApi;
 using Microsoft.VisualStudio.Services.Common;
@@ -15,10 +16,12 @@ namespace ModelContextProtocolServer.AzureDevops.Stdio.Services;
 
 internal class AzureDevOpsClient
 {
-    public ProjectHttpClient ProjectClient { get; }
+    public BuildHttpClient BuildClient { get; }
 
     public GitHttpClient GitClient { get; }
 
+    public ProjectHttpClient ProjectClient { get; }
+    
     public IAzureDevOpsSearchApi SearchApi { get; }
 
     public AzureDevOpsClient(IConfiguration configuration)
@@ -29,8 +32,9 @@ internal class AzureDevOpsClient
 
         var connection = new VssConnection(new Uri(baseUri), new VssBasicCredential(string.Empty, pat));
 
-        ProjectClient = connection.GetClient<ProjectHttpClient>();
+        BuildClient = connection.GetClient<BuildHttpClient>();
         GitClient = connection.GetClient<GitHttpClient>();
+        ProjectClient = connection.GetClient<ProjectHttpClient>();
         SearchApi = GetIAzureDevOpsSearchApi(baseUri, pat);
     }
 

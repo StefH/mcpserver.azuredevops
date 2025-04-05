@@ -30,9 +30,9 @@ dotnet tool install --global mcpserver.azuredevops.stdio
 - `SearchCode`: Search for code across repositories in a project
 
 
-### Git Tools
-- `GetCommit`: ...
-- `GetCommitsForRepository`: ...
+### GetCommit Tools
+- `GetCommit`: Retrieve a particular commit details
+- `GetCommits`: Retrieve git commits
 
 
 ### 🚧 Work Item Tools 🚧

@@ -10,8 +10,8 @@ internal class CommitTools(AzureDevOpsClient azureDevOpsClient)
 {
     [McpServerTool, Description("Retrieve a particular commit details for a repository.")]
     public Task<GitCommit> GetCommit(
-        [Description("The ID of the commit.")] string commitId,
         [Description("The ID of the repository.")] string repositoryId,
+        [Description("The ID of the commit.")] string commitId,
         [Description("The number of changes to include in the result.")] int? changeCount = null
     )
     {
@@ -19,7 +19,7 @@ internal class CommitTools(AzureDevOpsClient azureDevOpsClient)
     }
 
     [McpServerTool, Description("Retrieve git commits for a repository.")]
-    public async Task<IReadOnlyList<GitCommitRef>> GetCommitsForRepository(
+    public async Task<IReadOnlyList<GitCommitRef>> GetCommits(
         [Description("The ID of the repository.")] string repositoryId,
         [Description("Number of commits to return (default value is 100).")] int? top = null,
         [Description("Number of commits to skip.")] int? skip = null

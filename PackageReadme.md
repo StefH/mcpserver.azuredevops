@@ -8,15 +8,25 @@ dotnet tool install --global mcpserver.azuredevops.stdio
 
 <br>
 
-## Supported Methods
+## 🛠️ Supported Tools
 
-### Project
-- `GetProject`
-- `GetProjects`
+### Core Navigation Tools
+- `GetProjects`: List all accessible projects
+- `GetRepositories`: List all repositories in a project
 
 
-### Git
-- `GetCommit`
-- `GetCommitsForRepository`
-- `GetRepository`
-- `GetRepositories`
+### Project Tools
+- `GetProject`: Get details of a specific project
+
+
+### Repository Tools
+- `GetRepository`: Get repository details
+
+
+### Search Tools
+- `SearchCode`: Search for code across repositories in a project
+
+
+### GetCommit Tools
+- `GetCommit`: Retrieve a particular commit details
+- `GetCommits`: Retrieve git commits

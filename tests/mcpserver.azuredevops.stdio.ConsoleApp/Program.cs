@@ -22,7 +22,7 @@ var repositories = await navTools.GetRepositories(projects[1].Id.ToString());
 Console.WriteLine(ToJson(repositories));
 
 var gitTools = new CommitTools(azureDevOpsClient);
-var commits = await gitTools.GetCommitsForRepository(repositories[1].Id.ToString());
+var commits = await gitTools.GetCommits(repositories[1].Id.ToString());
 Console.WriteLine(ToJson(commits));
 
 var searchTools = new SearchCodeTools(azureDevOpsClient);
