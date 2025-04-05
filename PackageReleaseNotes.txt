@@ -1,4 +1,5 @@
-# 0.0.1-preview-04 (03 April 2025)
-- #3 GetCommit [enhancement]
+# 0.0.1-preview-05 (05 April 2025)
+- #4 Update ModelContextProtocolServer.Stdio to support ModelContextProtocol preview-05 [enhancement]
+- #5 Add CodeSearch [enhancement]
 
 The full release notes can be found here: https://github.com/StefH/mcpserver.azuredevops/blob/main/ReleaseNotes.md
