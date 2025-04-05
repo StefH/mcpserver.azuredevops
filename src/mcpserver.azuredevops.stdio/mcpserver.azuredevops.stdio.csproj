@@ -48,7 +48,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.TeamFoundationServer.Client" Version="19.225.1" />
-    <PackageReference Include="ModelContextProtocolServer.Stdio" Version="0.0.1-preview-04" />
+    <PackageReference Include="ModelContextProtocolServer.Stdio" Version="0.0.1-preview-05" />
   </ItemGroup>
 
   <ItemGroup>
