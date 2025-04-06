@@ -6,7 +6,7 @@ A Stdio MCP server as dotnet tool to access Azure DevOps.
 
 ### Installation
 ``` cmd
-dotnet tool install --global mcpserver.azuredevops.stdio
+dotnet tool install --global mcpserver.azuredevops.stdio --version 0.0.1-preview-05
 ```
 
 <br>
