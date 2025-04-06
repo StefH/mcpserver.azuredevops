@@ -126,3 +126,9 @@ Get 2 commits from the azure devops repository '. . .'.
 
 #### Answer
 ![Claude Desktop-01](resources/screenshots/ClaudeDesktop-01.png)
+
+<br>
+
+## 📖 Links
+- https://github.com/Tiberriver256/mcp-server-azure-devops
+- https://github.com/stefanskiasan/azure-devops-mcp-server

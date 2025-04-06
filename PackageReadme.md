@@ -30,3 +30,9 @@ dotnet tool install --global mcpserver.azuredevops.stdio
 ### GetCommit Tools
 - `GetCommit`: Retrieve a particular commit details
 - `GetCommits`: Retrieve git commits
+
+<br>
+
+## 📖 Links
+- https://github.com/Tiberriver256/mcp-server-azure-devops
+- https://github.com/stefanskiasan/azure-devops-mcp-server
