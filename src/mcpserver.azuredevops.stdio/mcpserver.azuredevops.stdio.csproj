@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Version>0.0.1-preview-05</Version>
+    <Version>0.0.1</Version>
     <PackageId>mcpserver.azuredevops.stdio</PackageId>
     <ToolCommandName>mcpserver.azuredevops.stdio</ToolCommandName>
     <RootNamespace>ModelContextProtocolServer.AzureDevops.Stdio</RootNamespace>
@@ -45,7 +45,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.TeamFoundationServer.Client" Version="19.225.1" />
-    <PackageReference Include="ModelContextProtocolServer.Stdio" Version="0.0.1-preview-05" />
+    <PackageReference Include="ModelContextProtocolServer.Stdio" Version="0.0.1-preview-08" />
     <PackageReference Include="RestEase" Version="1.6.4" />
     <PackageReference Include="RestEase.SourceGenerator" Version="1.6.4">
       <PrivateAssets>all</PrivateAssets>
