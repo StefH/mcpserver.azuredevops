@@ -134,6 +134,10 @@ Get 2 commits from the azure devops repository '. . .'.
 - https://github.com/stefanskiasan/azure-devops-mcp-server
 
 
+## Certified
+- This MCP is certified by [MCP Review](https://mcpreview.com) ([Proof of ownership](https://mcpreview.com/mcp-servers/stefh/mcpserver-azuredevops))
+
+
 ## Sponsors
 
 [Entity Framework Extensions](https://entityframework-extensions.net/?utm_source=StefH) and [Dapper Plus](https://dapper-plus.net/?utm_source=StefH) are major sponsors and proud to contribute to the development of **mcpserver.azuredevops.stdio**.
