@@ -1,0 +1,21 @@
+{
+  "$schema": "https://modelcontextprotocol.io/schemas/draft/2025-07-09/server.json",
+  "description": "A Stdio MCP server to access Azure DevOps.",
+  "name": "io.github.StefH/mcpserver.azuredevops",
+  "packages": [
+    {
+      "registry_name": "nuget",
+      "name": "mcpserver.azuredevops",
+      "version": "0.0.2-preview-01",
+      "package_arguments": [],
+      "environment_variables": []
+    }
+  ],
+  "repository": {
+    "url": "https://github.com/StefH/mcpserver.azuredevops",
+    "source": "github"
+  },
+  "version_detail": {
+    "version": "0.0.2-preview-01"
+  }
+}

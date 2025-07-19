@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Version>0.0.1</Version>
+    <Version>0.0.2-preview-01</Version>
     <PackageId>mcpserver.azuredevops.stdio</PackageId>
     <ToolCommandName>mcpserver.azuredevops.stdio</ToolCommandName>
     <RootNamespace>ModelContextProtocolServer.AzureDevops.Stdio</RootNamespace>
@@ -15,11 +15,15 @@
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/StefH/mcpserver.azuredevops</RepositoryUrl>
     <ApplicationIcon>../../resources/icon.ico</ApplicationIcon>
-    <Copyright>Copyright © 2025 Stef Heyenrath</Copyright>
+    <Copyright>Copyright © Stef Heyenrath</Copyright>
     <Authors>Stef Heyenrath</Authors>
     <PackageIcon>icon.png</PackageIcon>
     <IsPackable>true</IsPackable>
+
+    <!-- Set up the NuGet package to be an MCP server -->
     <PackAsTool>true</PackAsTool>
+    <PackageType>McpServer</PackageType>
+    
     <PackageReleaseNotes>$([System.IO.File]::ReadAllText("$(MSBuildProjectDirectory)/../../PackageReleaseNotes.txt"))</PackageReleaseNotes>
     <PackageTags>MCP;ModelContextProtocol;AI;LLM;Server;Stdio;Azure;DevOps</PackageTags>
     <Description>A Stdio MCP server as dotnet tool to access Azure DevOps.</Description>
@@ -28,6 +32,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include=".mcp\server.json" Pack="true" PackagePath="/.mcp/" />
     <None Include="../../resources/icon.png" Pack="true" PackagePath="" />
     <None Include="../../PackageReadme.md" Pack="true" PackagePath="" />
   </ItemGroup>
@@ -45,7 +50,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.TeamFoundationServer.Client" Version="19.225.1" />
-    <PackageReference Include="ModelContextProtocolServer.Stdio" Version="0.0.1-preview-08" />
+    <PackageReference Include="ModelContextProtocolServer.Stdio" Version="0.3.0" />
     <PackageReference Include="RestEase" Version="1.6.4" />
     <PackageReference Include="RestEase.SourceGenerator" Version="1.6.4">
       <PrivateAssets>all</PrivateAssets>
@@ -56,5 +61,15 @@
   <ItemGroup>
     <InternalsVisibleTo Include="$(AssemblyName).ConsoleApp" />
   </ItemGroup>
+
+  <Target Name="UpdateServerJsonVersion" BeforeTargets="BeforeBuild">
+    <PropertyGroup>
+      <ServerJsonPath>$(MSBuildProjectDirectory)\.mcp\server.json</ServerJsonPath>
+      <CSProjPath>$(MSBuildProjectDirectory)\mcpserver.azuredevops.stdio.csproj</CSProjPath>
+      <UpdateScriptPath>$(MSBuildProjectDirectory)\..\Update-ServerJsonVersion.ps1</UpdateScriptPath>
+    </PropertyGroup>
+
+    <Exec Command="pwsh -NoProfile -ExecutionPolicy Bypass -File &quot;$(UpdateScriptPath)&quot; -ServerJsonPath &quot;$(ServerJsonPath)&quot; -CSProjPath &quot;$(CSProjPath)&quot;" />
+  </Target>
 
 </Project>
