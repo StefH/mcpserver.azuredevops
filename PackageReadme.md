@@ -1,6 +1,12 @@
-﻿## mcpserver.azuredevops
+﻿# mcpserver.azuredevops
 MCP server as dotnet tool to access Azure DevOps.
 
+## `dnx`
+``` cmd
+dnx mcpserver.azuredevops.stdio --yes
+```
+
+## `dotnet tool`
 ### Installation
 ``` cmd
 dotnet tool install --global mcpserver.azuredevops.stdio
@@ -8,36 +14,36 @@ dotnet tool install --global mcpserver.azuredevops.stdio
 
 <br>
 
-### 🛠️ Supported Tools
+## 🛠️ Supported Tools
 
-#### Core Navigation Tools
+### Core Navigation Tools
 - `GetProjects`: List all accessible projects
 - `GetRepositories`: List all repositories in a project
 
 
-#### Project Tools
+### Project Tools
 - `GetProject`: Get details of a specific project
 
 
-#### Repository Tools
+### Repository Tools
 - `GetRepository`: Get repository details
 
 
-#### Search Tools
+### Search Tools
 - `SearchCode`: Search for code across repositories in a project
 
 
-#### GetCommit Tools
+### GetCommit Tools
 - `GetCommit`: Retrieve a particular commit details
 - `GetCommits`: Retrieve git commits
 
 <br>
 
-### 📖 Links
+## 📖 Links
 - https://github.com/Tiberriver256/mcp-server-azure-devops
 - https://github.com/stefanskiasan/azure-devops-mcp-server
 
-### Sponsors
+## Sponsors
 
 [Entity Framework Extensions](https://entityframework-extensions.net/?utm_source=StefH) and [Dapper Plus](https://dapper-plus.net/?utm_source=StefH) are major sponsors and proud to contribute to the development of **mcpserver.azuredevops.stdio**.
 
