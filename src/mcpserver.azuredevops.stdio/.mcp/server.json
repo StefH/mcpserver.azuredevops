@@ -6,7 +6,7 @@
     {
       "registry_name": "nuget",
       "name": "mcpserver.azuredevops",
-      "version": "0.0.2-preview-01",
+      "version": "0.0.2",
       "package_arguments": [],
       "environment_variables": [
         {
@@ -29,6 +29,6 @@
     "source": "github"
   },
   "version_detail": {
-    "version": "0.0.2-preview-01"
+    "version": "0.0.2"
   }
 }

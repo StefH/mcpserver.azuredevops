@@ -50,7 +50,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.TeamFoundationServer.Client" Version="19.225.1" />
-    <PackageReference Include="ModelContextProtocolServer.Stdio" Version="0.5.0" />
+    <PackageReference Include="ModelContextProtocolServer.Stdio" Version="0.6.0" />
     <PackageReference Include="RestEase" Version="1.6.4" />
     <PackageReference Include="RestEase.SourceGenerator" Version="1.6.4">
       <PrivateAssets>all</PrivateAssets>
