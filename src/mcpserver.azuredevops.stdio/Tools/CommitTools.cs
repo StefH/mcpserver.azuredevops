@@ -8,7 +8,8 @@ namespace ModelContextProtocolServer.AzureDevops.Stdio.Tools;
 [McpServerToolType]
 internal class CommitTools(AzureDevOpsClient azureDevOpsClient)
 {
-    [McpServerTool, Description("Retrieve a particular commit details for a repository.")]
+    [McpServerTool(ReadOnly = true, UseStructuredContent = true)]
+    [Description("Retrieve a particular commit details for a repository.")]
     public Task<GitCommit> GetCommit(
         [Description("The ID of the repository.")] string repositoryId,
         [Description("The ID of the commit.")] string commitId,
@@ -18,7 +19,8 @@ internal class CommitTools(AzureDevOpsClient azureDevOpsClient)
         return azureDevOpsClient.GitClient.GetCommitAsync(commitId, repositoryId, changeCount);
     }
 
-    [McpServerTool, Description("Retrieve git commits for a repository.")]
+    [McpServerTool(ReadOnly = true, UseStructuredContent = true)]
+    [Description("Retrieve git commits for a repository.")]
     public async Task<IReadOnlyList<GitCommitRef>> GetCommits(
         [Description("The ID of the repository.")] string repositoryId,
         [Description("Number of commits to return (default value is 100).")] int? top = null,

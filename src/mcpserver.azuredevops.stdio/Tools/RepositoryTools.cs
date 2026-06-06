@@ -8,7 +8,8 @@ namespace ModelContextProtocolServer.AzureDevops.Stdio.Tools;
 [McpServerToolType]
 internal class RepositoryTools(AzureDevOpsClient azureDevOpsClient)
 {
-    [McpServerTool, Description("Retrieve details for a git repository.")]
+    [McpServerTool(ReadOnly = true, UseStructuredContent = true)]
+    [Description("Retrieve details for a git repository.")]
     public Task<GitRepository?> GetRepository(
         [Description("The name or ID of the repository.")] string repositoryId
     )

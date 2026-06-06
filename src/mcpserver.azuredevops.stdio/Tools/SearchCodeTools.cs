@@ -8,7 +8,8 @@ namespace ModelContextProtocolServer.AzureDevops.Stdio.Tools;
 [McpServerToolType]
 internal class SearchCodeTools(AzureDevOpsClient azureDevOpsClient)
 {
-    [McpServerTool, Description("Search for code across repositories in a project.")]
+    [McpServerTool(ReadOnly = true, UseStructuredContent = true)]
+    [Description("Search for code across repositories in a project.")]
     public async Task<CodeSearchResponse> Search(
         [Description("Project ID or project name.")] string projectId,
         [Description("The search text.")] string searchText,
@@ -59,6 +60,27 @@ internal class SearchCodeTools(AzureDevOpsClient azureDevOpsClient)
         }
 
         var response = await azureDevOpsClient.SearchApi.FetchCodeSearchResultsAsync(projectId, searchRequest);
-        return response.GetContent();
+        return response.GetContent(); // JsonCalltoolResult.FromValue(response);
     }
 }
+
+//public static class JsonCalltoolResult
+//{
+//    private static readonly JsonSerializerOptions _jsonOptions = new();
+
+//    public static CallToolResult FromValue<T>(T? value)
+//    {
+//        var jsonNode = value != null ? JsonSerializer.SerializeToNode(value, _jsonOptions) : null;
+//        return new CallToolResult
+//        {
+//            StructuredContent = jsonNode,
+//            Content =
+//            [
+//                new TextContentBlock
+//                {
+//                    Text = jsonNode?.ToJsonString(_jsonOptions) ?? string.Empty
+//                }
+//            ]
+//        };
+//    }
+//}
