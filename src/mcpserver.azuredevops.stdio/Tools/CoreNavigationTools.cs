@@ -9,7 +9,8 @@ namespace ModelContextProtocolServer.AzureDevops.Stdio.Tools;
 [McpServerToolType]
 internal class CoreNavigationTools(AzureDevOpsClient azureDevOpsClient)
 {
-    [McpServerTool, Description("Get Azure DevOps projects.")]
+    [McpServerTool(ReadOnly = true, UseStructuredContent = true)]
+    [Description("Get Azure DevOps projects.")]
     public async Task<IReadOnlyList<TeamProjectReference>> GetProjects(
         [Description("Number of team projects to return.")] int? top = null,
         [Description("Number of team projects to skip.")] int? skip = null)
@@ -34,7 +35,8 @@ internal class CoreNavigationTools(AzureDevOpsClient azureDevOpsClient)
         return allProjects;
     }
 
-    [McpServerTool, Description("Retrieve git repositories.")]
+    [McpServerTool(ReadOnly = true, UseStructuredContent = true)]
+    [Description("Retrieve git repositories.")]
     public async Task<IReadOnlyList<GitRepository>> GetRepositories(
         [Description("The name or ID of the project.")] string projectId
     )

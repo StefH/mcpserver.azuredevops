@@ -8,7 +8,8 @@ namespace ModelContextProtocolServer.AzureDevops.Stdio.Tools;
 [McpServerToolType]
 internal class SearchCodeTools(AzureDevOpsClient azureDevOpsClient)
 {
-    [McpServerTool, Description("Search for code across repositories in a project.")]
+    [McpServerTool(ReadOnly = true, UseStructuredContent = true)]
+    [Description("Search for code across repositories in a project.")]
     public async Task<CodeSearchResponse> Search(
         [Description("Project ID or project name.")] string projectId,
         [Description("The search text.")] string searchText,

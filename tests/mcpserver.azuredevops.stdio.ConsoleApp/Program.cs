@@ -15,10 +15,10 @@ var configuration = new ConfigurationBuilder()
 var azureDevOpsClient = new AzureDevOpsClient(configuration);
 
 var navTools = new CoreNavigationTools(azureDevOpsClient);
-var projects = await navTools.GetProjects(3);
+var projects = await navTools.GetProjects(10);
 Console.WriteLine(ToJson(projects));
 
-var repositories = await navTools.GetRepositories(projects[1].Id.ToString());
+var repositories = await navTools.GetRepositories(projects[3].Id.ToString());
 Console.WriteLine(ToJson(repositories));
 
 var gitTools = new CommitTools(azureDevOpsClient);
