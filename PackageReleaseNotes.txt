@@ -1,4 +1,6 @@
-# 0.0.1 (13 June 2025)
+# 0.0.2 (07 June 2026)
 - #6 Update ModelContextProtocolServer.Stdio [enhancement]
+- #7 Change into real MCP Server (in NuGet) [enhancement]
+- #8 Upgrade nuget packages [enhancement]
 
 The full release notes can be found here: https://github.com/StefH/mcpserver.azuredevops/blob/main/ReleaseNotes.md
